@@ -37,7 +37,7 @@ Please use css formater to format the css file first
 1. The default size of 1rem is 16px which can be changed in the user settings.
 2. All values will remove trailing zero's (e.g. '1.500rem' would become '1.5rem').
 
-## Examples (1rem = 16px)
+## Examples (1rem = 40px)
 
 ### Example 1 (px to rem)
 ```css
