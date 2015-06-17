@@ -34,7 +34,7 @@ Please use css formater to format the css file first
 - Checks to make sure the value is a valid px unit to convert to rem and visa versa
 
 ## Notes
-1. The default size of 1rem is 16px which can be changed in the user settings.
+1. The default size of 1rem is 40px which can be changed in the user settings.
 2. All values will remove trailing zero's (e.g. '1.500rem' would become '1.5rem').
 
 ## Examples (1rem = 40px)
