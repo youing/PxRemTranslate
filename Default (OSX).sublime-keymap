@@ -1,0 +1,8 @@
+[
+    {
+        "keys": ["super+shift+e"], "command": "pxtoreme"
+    },
+     {
+        "keys": ["super+shift+w"], "command": "remtopxe"
+    }
+]

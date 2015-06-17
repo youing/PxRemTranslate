@@ -1,0 +1,60 @@
+[   
+    {
+        "caption": "Tools",
+        "mnemonic": "t",
+        "id": "tools",
+        "children": [{
+            "id": "PxRemTranslate",
+            "caption": "PxRemTranslate",
+            "children": [
+                {
+                "id": "{px-to-rem-e}",
+                "caption": "PX -> REM",
+                "command": "pxtoreme"
+                },
+                {
+                    "id": "{rem-to-px-e}",
+                    "caption": "REM -> PX",
+                    "command": "remtopxe"
+                }
+            ]
+        }]
+    },
+    {
+        "caption": "Preferences",
+        "id": "preferences",
+        "children":
+        [
+            {
+                "caption": "Package Settings",
+                "id": "package-settings",
+                "children":
+                [
+                    {
+                        "caption": "PxRemTranslate",
+                        "children":
+                        [
+                            {
+                                "caption": "Settings – Default",
+                                "command": "open_file",
+                                "args":
+                                {
+                                    "file": "${packages}/PxRemTranslate/PxRemTranslate.sublime-settings"
+                                }
+                            },
+                            {
+                                "caption": "Settings – User",
+                                "command": "open_file",
+                                "args":
+                                {
+                                    "file": "${packages}/User/PxRemTranslate.sublime-settings"
+                                }
+                            },
+                            { "caption": "-" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
