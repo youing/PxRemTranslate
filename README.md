@@ -64,7 +64,7 @@ body {
 
 ### Example 2 (rem to px)
 
-
+```css
 body {
 	width: 0.625rem 1.25rem 2.5rem 3.125rem;
 	margin: 1.25rem;
