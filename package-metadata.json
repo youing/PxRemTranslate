@@ -1,1 +1,1 @@
-{"description": "Allows easy conversion of rem to px and px to rem.", "url": "https://git.oschina.net/youing/pxtorem", "platforms": ["*"], "version": "2015.06.17.30.10.09", "sublime_text": "*", "dependencies": []}
+{"description": "Allows easy conversion of rem to px and px to rem.", "url": "https://github.com/youing/PxRemTranslate", "platforms": ["*"], "version": "2015.06.17.30.10.09", "sublime_text": "*", "dependencies": []}
