@@ -8,7 +8,7 @@ class pxtoremeCommand(sublime_plugin.TextCommand):
 
 
                 # retrieve the settings
-                self.settings = sublime.load_settings('Test.sublime-settings')
+                self.settings = sublime.load_settings('PxRemTranslate.sublime-settings')
                 base_rem = self.settings.get('1rem', 16)
 
                 # get the selected text
@@ -49,7 +49,7 @@ class remtopxeCommand(sublime_plugin.TextCommand):
 
 
                 # retrieve the settings
-                self.settings = sublime.load_settings('Test.sublime-settings')
+                self.settings = sublime.load_settings('PxRemTranslate.sublime-settings')
                 base_rem = self.settings.get('1rem', 16)
 
                 # get the selected text
