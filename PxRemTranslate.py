@@ -14,7 +14,7 @@ class pxtoremeCommand(sublime_plugin.TextCommand):
                 # get the selected text
                 s = view.substr(region)
 
-                p = re.compile("(((?<=[{;\n\s])*.*):(.*(px|em|%|0)(?=(;|\n|}))))")
+                p = re.compile("(((?<=[{;\n\s])*.*):(.*(px|em|%|0|center|left|top|right)(?=([;\n}\s]))))")
 
                 for com in p.finditer(s):
 
@@ -55,7 +55,7 @@ class remtopxeCommand(sublime_plugin.TextCommand):
                 # get the selected text
                 s = view.substr(region)
 
-                p = re.compile("(((?<=[{;\n\s])*.*):(.*(rem|em|%|0)(?=[;\n}])))")
+                p = re.compile("(((?<=[{;\n\s])*.*):(.*(rem|em|%|0|center|left|top|right)(?=[;\n\s}])))")
 
                 for com in p.finditer(s):
 
