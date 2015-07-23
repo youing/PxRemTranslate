@@ -14,31 +14,27 @@ class pxtoremeCommand(sublime_plugin.TextCommand):
                 # get the selected text
                 s = view.substr(region)
 
-                p = re.compile("(((?<=[{;\n\s])*.*):(.*(px|em|%|0|center|left|top|right)(?=([;\n}\s]))))")
+
+                p = re.compile("([-\.\d]+)(?=px)px")
+
 
                 for com in p.finditer(s):
 
-                    old = com.group(3)
-                    attr = []
-                    
-                    old = re.sub("^(\n|\s|\r)+",'',old)
- 
-                    for a in re.split('\s',old):
-                    	unit = a[-2:]
-                    	if unit == 'px':        	
-	                    	n = a.replace('px','')                    	
-	                    	rem = float(n) / base_rem
-	                    	rem = '{0:g}'.format(rem)
-	                    	attr.append(str(rem) + 'rem')
-                    	else:
-                    		attr.append(a)
+                    a = com.group()
+                    old = com.group()
 
+                    n = a.replace('px','')    
+                    rem = float(n) / base_rem
+                    rem = '{0:g}'.format(rem) + 'rem'
+                    s = s.replace(old,rem,1)
 
-                    result = ' '.join(attr) 
-                    s = s.replace(old,result,1)       
 
                 
                 view.replace(edit,region,s)
+
+
+
+
 
 
 class remtopxeCommand(sublime_plugin.TextCommand):
@@ -47,7 +43,6 @@ class remtopxeCommand(sublime_plugin.TextCommand):
         for region in view.sel():
             if not region.empty():
 
-
                 # retrieve the settings
                 self.settings = sublime.load_settings('PxRemTranslate.sublime-settings')
                 base_rem = self.settings.get('1rem', 16)
@@ -55,28 +50,18 @@ class remtopxeCommand(sublime_plugin.TextCommand):
                 # get the selected text
                 s = view.substr(region)
 
-                p = re.compile("(((?<=[{;\n\s])*.*):(.*(rem|em|%|0|center|left|top|right)(?=[;\n\s}])))")
+                p = re.compile("([-\.\d]+)(?=rem)rem")
+
 
                 for com in p.finditer(s):
 
-                    old = com.group(3)
-                    attr = []
-                    old = re.sub("^(\n|\s|\r)+",'',old)
- 
-                    for a in re.split('\s',old):  
-                    	unit = a[-3:]
-                    	if unit == 'rem':
-	                    	n = a.replace('rem','');
-	                    	rem = float(n) * base_rem
+                    a = com.group()
+                    old = com.group()
 
-	                    	rem = '{0:g}'.format(rem)
-	                    	attr.append(str(rem) + 'px')
-                    	else:
-                    		attr.append(a)
-
-                    result = ' '.join(attr)                   
-
-                    s = s.replace(old,result,1)       
+                    n = a.replace('rem','')    
+                    rem = float(n) * base_rem
+                    rem = '{0:g}'.format(rem) + 'px'
+                    s = s.replace(old,rem,1)
 
                 
                 view.replace(edit,region,s)
