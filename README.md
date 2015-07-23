@@ -15,10 +15,6 @@ If you want to install this plugin manually for some reason, simply clone this r
 ## Instructions
 
 
-###attation####
-
-Please use css formater to format the css file first
-
 
 ### Converting px to rem
 1. Select a code block
