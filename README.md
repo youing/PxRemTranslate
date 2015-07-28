@@ -9,7 +9,6 @@ PX - REM Translate
 A Sublime Text plugin that allows easy conversion of rem to px and px to rem.
 
 ## Installation
-You can easily install the pluing through Will Bond's excellent Package Control (https://sublime.wbond.net/).
 If you want to install this plugin manually for some reason, simply clone this repo into your packages directory (make sure not to put it in the user sub dir).
 
 ## Instructions
